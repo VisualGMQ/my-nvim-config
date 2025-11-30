@@ -1,3 +1,3 @@
 require("lualine").setup {
-        theme = "nightfly"
+    theme = "nightfly"
 }
