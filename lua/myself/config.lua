@@ -16,9 +16,10 @@ vim.opt.showcmd = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 
--- vim.opt.hlsearch = true
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = false
 
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+vim.opt.mouse = ""
