@@ -136,7 +136,7 @@ local lsp_list = {
 function find_compile_commands(start_dir)
     local dir = start_dir or vim.fn.getcwd()
     local pattern = 'compile_commands.json'
-    local file_path = vim.fn.findfile(pattern, dir)
+    local file_path = vim.fn.findfile(pattern, dir .. '/**')
     if file_path ~= '' then
         return vim.fn.fnamemodify(file_path, ':p:h')
     end
