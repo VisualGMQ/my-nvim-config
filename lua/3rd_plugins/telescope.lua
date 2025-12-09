@@ -48,6 +48,6 @@ telescope.setup{
     vim.keymap.set('n', '<leader>ggf', builtin.git_status, { desc = 'Git Status' })
 
     vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto Definitions' })
-    vim.keymap.set('n', 'gf', builtin.lsp_references, { desc = 'References' })
-    vim.keymap.set('n', 'gci', builtin.lsp_incoming_calls, { desc = 'Incoming calls' })
-    vim.keymap.set('n', 'gco', builtin.lsp_outgoing_calls, { desc = 'Outgoing calls' })
+    vim.keymap.set('n', 'fr', builtin.lsp_references, { desc = 'References' })
+    vim.keymap.set('n', 'fic', builtin.lsp_incoming_calls, { desc = 'Incoming calls' })
+    vim.keymap.set('n', 'foc', builtin.lsp_outgoing_calls, { desc = 'Outgoing calls' })
