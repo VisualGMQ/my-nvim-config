@@ -35,7 +35,7 @@ telescope.setup{
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
-    vim.keymap.set('v', '<leader>fs', builtin.grep_string, { desc = 'Find String' })
+    vim.keymap.set('n', 'fs', builtin.lsp_workspace_symbols, { desc = 'Document Symbols' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live Grep' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help Tags' })
@@ -51,4 +51,3 @@ telescope.setup{
     vim.keymap.set('n', 'gf', builtin.lsp_references, { desc = 'References' })
     vim.keymap.set('n', 'gci', builtin.lsp_incoming_calls, { desc = 'Incoming calls' })
     vim.keymap.set('n', 'gco', builtin.lsp_outgoing_calls, { desc = 'Outgoing calls' })
-    vim.keymap.set('n', 'gs', builtin.lsp_workspace_symbols, { desc = 'Document Symbols' })

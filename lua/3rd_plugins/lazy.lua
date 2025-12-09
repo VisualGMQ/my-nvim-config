@@ -17,8 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		-- import your plugins
-		-- { import = "plugins" },
 		{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000 },
 		{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false },
 		{ "https://github.com/neovim/nvim-lspconfig", lazy = true },
@@ -31,6 +29,7 @@ require("lazy").setup({
 				"neovim/nvim-lspconfig",
 			},
 		},
+		{ "p00f/clangd_extensions.nvim", lazy = true },
 
 		-- complete family
 		{ "hrsh7th/cmp-nvim-lsp", lazy = false },
@@ -111,7 +110,25 @@ require("lazy").setup({
 		-- formatter
 		{ "stevearc/conform.nvim", lazy = true },
 
+		-- quick move & search
 		{ "folke/flash.nvim", event = "VeryLazy", lazy = false },
+
+		-- auto-pairs
+		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "0.10.0" },
+
+		-- git relate
+		{ "lewis6991/gitsigns.nvim", lazy = false },
+
+		-- refactory
+		{
+			"ThePrimeagen/refactoring.nvim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+			},
+			lazy = false,
+			opts = {},
+		},
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
