@@ -75,7 +75,7 @@ require("lazy").setup({
 			opts = {},
 			cmd = "Trouble",
 			dependencies = { "nvim-tree/nvim-web-devicons" },
-            version = "*",
+			version = "*",
 		},
 
 		-- background task manager
@@ -132,6 +132,17 @@ require("lazy").setup({
 			},
 			lazy = false,
 			opts = {},
+		},
+
+        -- session
+		{
+			"rmagatti/auto-session",
+			lazy = false,
+            tag = "v2.5.1",
+
+			opts = {
+				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			},
 		},
 	},
 	-- Configure any other settings here. See the documentation for more details.
