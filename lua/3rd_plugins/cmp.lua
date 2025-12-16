@@ -150,6 +150,7 @@ local params = {
 		cmd = {
 			"clangd",
 			"--clang-tidy",
+            "--background-index",
 			"--compile-commands-dir=" .. compile_commands_dir,
 		},
 	},

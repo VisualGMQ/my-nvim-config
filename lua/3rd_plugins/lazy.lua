@@ -15,35 +15,37 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Force set plugins version. If no version, set tag. If no tag, then pull master branch by default
 require("lazy").setup({
 	spec = {
-		{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000 },
-		{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false },
-		{ "https://github.com/neovim/nvim-lspconfig", lazy = true },
-		{ "mason-org/mason.nvim", lazy = true, opts = {} },
+		{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000, version = "*" },
+		{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, tag = "v0.10.0" },
+		{ "neovim/nvim-lspconfig", lazy = true, version = "*" },
+		{ "mason-org/mason.nvim", lazy = true, opts = {}, version = "*" },
 		{
 			"mason-org/mason-lspconfig.nvim",
 			lazy = true,
+			version = "*",
 			dependencies = {
-				{ "mason-org/mason.nvim", opts = {} },
+				"mason-org/mason.nvim",
 				"neovim/nvim-lspconfig",
 			},
 		},
 		{ "p00f/clangd_extensions.nvim", lazy = true },
 
 		-- complete family
-		{ "hrsh7th/cmp-nvim-lsp", lazy = false },
-		{ "hrsh7th/cmp-buffer", lazy = false },
-		{ "hrsh7th/cmp-path", lazy = false },
-		{ "hrsh7th/cmp-cmdline", lazy = false },
-		{ "hrsh7th/nvim-cmp", lazy = false },
+		{ "hrsh7th/cmp-nvim-lsp", lazy = false, version = "*" },
+		{ "hrsh7th/cmp-buffer", lazy = false, version = "*" },
+		{ "hrsh7th/cmp-path", lazy = false, version = "*" },
+		{ "hrsh7th/cmp-cmdline", lazy = false, version = "*" },
+		{ "hrsh7th/nvim-cmp", lazy = false, version = "*" },
 
 		-- snip enigne
-		{ "L3MON4D3/LuaSnip", lazy = false, version = "v2.*" },
+		{ "L3MON4D3/LuaSnip", lazy = false, version = "*" },
 
 		-- util library
 		{ "nvim-lua/plenary.nvim", lazy = true },
-		{ "MunifTanjim/nui.nvim", lazy = true },
+		{ "MunifTanjim/nui.nvim", lazy = true, version = "*" },
 
 		-- fuzzy finding
 		-- use native fzf to speedup finding
@@ -55,7 +57,7 @@ require("lazy").setup({
 		-- fuzzy finding engine
 		{
 			"nvim-telescope/telescope.nvim",
-			tag = "v0.1.9",
+			version = "*",
 			lazy = true,
 			dependencies = {
 				"nvim-lua/plenary.nvim",
@@ -73,6 +75,7 @@ require("lazy").setup({
 			opts = {},
 			cmd = "Trouble",
 			dependencies = { "nvim-tree/nvim-web-devicons" },
+            version = "*",
 		},
 
 		-- background task manager
@@ -82,25 +85,26 @@ require("lazy").setup({
 		-- file explorer
 		{
 			"stevearc/oil.nvim",
-			dependencies = { { "nvim-tree/nvim-web-devicons" } },
 			lazy = false,
+			version = "*",
+			dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		},
 		{
 			"nvim-neo-tree/neo-tree.nvim",
-			branch = "v3.x",
+			version = "*",
+			lazy = false,
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"MunifTanjim/nui.nvim",
 				"nvim-tree/nvim-web-devicons",
 			},
-			lazy = false, -- neo-tree will lazily load itself
 		},
 
 		-- debugger relate
 		{ "mfussenegger/nvim-dap", lazy = true },
 		{
 			"rcarriga/nvim-dap-ui",
-			version = "v4.*",
+			version = "*",
 			dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "theHamsta/nvim-dap-virtual-text" },
 		},
 
@@ -108,16 +112,16 @@ require("lazy").setup({
 		{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons", lazy = false },
 
 		-- formatter
-		{ "stevearc/conform.nvim", lazy = true },
+		{ "stevearc/conform.nvim", lazy = true, version = "*" },
 
 		-- quick move & search
-		{ "folke/flash.nvim", event = "VeryLazy", lazy = false },
+		{ "folke/flash.nvim", event = "VeryLazy", lazy = false, version = "*" },
 
 		-- auto-pairs
-		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "0.10.0" },
+		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "*" },
 
 		-- git relate
-		{ "lewis6991/gitsigns.nvim", lazy = false },
+		{ "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
 
 		-- refactory
 		{
