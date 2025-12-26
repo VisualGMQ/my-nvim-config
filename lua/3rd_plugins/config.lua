@@ -13,12 +13,13 @@ require("3rd_plugins.refactory")
 -- temporary disable it
 -- auto-session will create shada file under Windows but not delete them, will cause error when all shada file exhaust
 -- require("3rd_plugins.auto-session")
-require("3rd_plugins.telescope")
+-- require("3rd_plugins.telescope")
+require("3rd_plugins.snacks")
 require("3rd_plugins.lualine")
 -- overseer has error when parse path under Windows, will add it back after fix this
 -- require("3rd_plugins.overseer")
-require("3rd_plugins.oil")
-require("3rd_plugins.neo_tree")
+-- require("3rd_plugins.oil")
+-- require("3rd_plugins.neo_tree")
 require("3rd_plugins.neovide")
 require("3rd_plugins.bufferline")
 require("3rd_plugins.conform")

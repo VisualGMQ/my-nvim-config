@@ -36,7 +36,7 @@ telescope.load_extension("fzf")
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-vim.keymap.set("n", "fs", builtin.lsp_dynamic_workspace_symbols, { desc = "Document Symbols" })
+vim.keymap.set("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, { desc = "Document Symbols" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
@@ -49,8 +49,8 @@ vim.keymap.set("n", "<leader>ggb", builtin.git_branches, { desc = "Git Branches"
 vim.keymap.set("n", "<leader>ggf", builtin.git_status, { desc = "Git Status" })
 
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definitions" })
-vim.keymap.set("n", "fr", builtin.lsp_references, { desc = "References" })
-vim.keymap.set("n", "fic", builtin.lsp_incoming_calls, { desc = "Incoming calls" })
-vim.keymap.set("n", "foc", builtin.lsp_outgoing_calls, { desc = "Outgoing calls" })
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "References" })
+vim.keymap.set("n", "<leader>fic", builtin.lsp_incoming_calls, { desc = "Incoming calls" })
+vim.keymap.set("n", "<leader>foc", builtin.lsp_outgoing_calls, { desc = "Outgoing calls" })
 
 vim.keymap.set( {"n", "x"}, "<leader>rr", function() require('telescope').extensions.refactoring.refactors() end)

@@ -49,21 +49,22 @@ require("lazy").setup({
 
 		-- fuzzy finding
 		-- use native fzf to speedup finding
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
-			lazy = true,
-		},
-		-- fuzzy finding engine
-		{
-			"nvim-telescope/telescope.nvim",
-			version = "*",
-			lazy = true,
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				"BurntSushi/ripgrep",
-			},
-		},
+		-- {
+		-- 	"nvim-telescope/telescope-fzf-native.nvim",
+		-- 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
+		-- 	lazy = true,
+		-- },
+		-- -- fuzzy finding engine
+		-- {
+		-- 	"nvim-telescope/telescope.nvim",
+		-- 	version = "*",
+		-- 	lazy = true,
+		-- 	dependencies = {
+		-- 		"nvim-lua/plenary.nvim",
+		-- 		"BurntSushi/ripgrep",
+		-- 	},
+		-- },
+		{ "folke/snacks.nvim", version = "*", priority = 1000, lazy = false },
 
 		-- status bar
 		{ "nvim-lualine/lualine.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
@@ -83,22 +84,25 @@ require("lazy").setup({
 		-- { 'stevearc/overseer.nvim', version = "v2.*", lazy = true },
 
 		-- file explorer
-		{
-			"stevearc/oil.nvim",
-			lazy = false,
-			version = "*",
-			dependencies = { { "nvim-tree/nvim-web-devicons" } },
-		},
-		{
-			"nvim-neo-tree/neo-tree.nvim",
-			version = "*",
-			lazy = false,
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				"MunifTanjim/nui.nvim",
-				"nvim-tree/nvim-web-devicons",
-			},
-		},
+		-- NOTE: I think this is no use..., I want to use Neotree when open empty nvim
+		-- {
+		-- 	"stevearc/oil.nvim",
+		-- 	lazy = false,
+		-- 	version = "*",
+		-- 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
+		-- },
+
+        -- use Snacks.nvim to replace
+		-- {
+		-- 	"nvim-neo-tree/neo-tree.nvim",
+		-- 	version = "*",
+		-- 	lazy = false,
+		-- 	dependencies = {
+		-- 		"nvim-lua/plenary.nvim",
+		-- 		"MunifTanjim/nui.nvim",
+		-- 		"nvim-tree/nvim-web-devicons",
+		-- 	},
+		-- },
 
 		-- debugger relate
 		{ "mfussenegger/nvim-dap", lazy = true },
@@ -134,11 +138,11 @@ require("lazy").setup({
 			opts = {},
 		},
 
-        -- session
+		-- session
 		{
 			"rmagatti/auto-session",
 			lazy = false,
-            tag = "v2.5.1",
+			tag = "v2.5.1",
 
 			opts = {
 				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },

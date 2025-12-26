@@ -129,6 +129,7 @@ local lsp_list = {
 	"clangd",
 	"rust-analyzer",
 	"neocmakelsp",
+    "lemminx",
 }
 
 ---get compile_commands.json
