@@ -170,16 +170,4 @@ trouble.setup({
 	},
 })
 
--- vim.keymap.set("n", "<leader>dg", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Diagnostics Buffer Toggle" })
--- vim.keymap.set("n", "<leader>da", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics Toggle" })
--- vim.keymap.set("n", "<leader>ds", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols Toggle" })
--- vim.keymap.set("n", "<leader>dl", "<cmd>Trouble lsp toggle focus=false<cr>", { desc = "Lsp Definition/References/... Toggle" })
--- vim.keymap.set("n", "<leader>dx", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix list" })
-
--- diagnostic icon in gutter, though not trouble.nvim's own config
-local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
-
-for name, icon in pairs(symbols) do
-	local hl = "DiagnosticSign" .. name
-	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-end
+vim.keymap.set("n", "<leader>ss", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols Toggle" })

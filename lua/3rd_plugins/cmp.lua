@@ -134,7 +134,7 @@ local lsp_list = {
 
 ---get compile_commands.json
 ---@return string|nil @dir of compile_commands
-function find_compile_commands(start_dir)
+local function find_compile_commands(start_dir)
     local dir = start_dir or vim.fn.getcwd()
     local pattern = 'compile_commands.json'
     local file_path = vim.fn.findfile(pattern, dir .. '/**')

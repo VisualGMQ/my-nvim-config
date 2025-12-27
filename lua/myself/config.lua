@@ -23,3 +23,4 @@ vim.opt.ignorecase = false
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.mouse = ""
+vim.opt.shada = ""

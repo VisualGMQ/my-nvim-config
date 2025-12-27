@@ -8,7 +8,7 @@ require("3rd_plugins.mason")
 require("3rd_plugins.mason-lspconfig")
 require("3rd_plugins.luasnip")
 require("3rd_plugins.cmp")
-require("3rd_plugins.trouble")
+-- require("3rd_plugins.trouble")
 require("3rd_plugins.refactory")
 -- temporary disable it
 -- auto-session will create shada file under Windows but not delete them, will cause error when all shada file exhaust
@@ -26,4 +26,13 @@ require("3rd_plugins.conform")
 require("3rd_plugins.flash")
 require("3rd_plugins.auto-pairs")
 require("3rd_plugins.clangd_extension")
-require("3rd_plugins.gitsigns")
+-- require("3rd_plugins.gitsigns")
+
+
+-- diagnostic icon in gutter
+local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
+
+for name, icon in pairs(symbols) do
+	local hl = "DiagnosticSign" .. name
+	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+end

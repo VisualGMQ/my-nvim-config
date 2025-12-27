@@ -70,14 +70,15 @@ require("lazy").setup({
 		{ "nvim-lualine/lualine.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
 
 		-- more pretty diagnostic
-		{
-			"folke/trouble.nvim",
-			lazy = false,
-			opts = {},
-			cmd = "Trouble",
-			dependencies = { "nvim-tree/nvim-web-devicons" },
-			version = "*",
-		},
+        -- use snacks.nvim to instead
+		-- {
+		-- 	"folke/trouble.nvim",
+		-- 	lazy = false,
+		-- 	opts = {},
+		-- 	cmd = "Trouble",
+		-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
+		-- 	version = "*",
+		-- },
 
 		-- background task manager
 		-- NOTE: can't use it under Windows(OverseerRun will abort due to path find not correct)
@@ -125,7 +126,8 @@ require("lazy").setup({
 		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "*" },
 
 		-- git relate
-		{ "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
+        -- use snacks.lua to instead
+		-- { "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
 
 		-- refactory
 		{
@@ -139,15 +141,15 @@ require("lazy").setup({
 		},
 
 		-- session
-		{
-			"rmagatti/auto-session",
-			lazy = false,
-			tag = "v2.5.1",
-
-			opts = {
-				suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			},
-		},
+        -- due to nvim 0.11 bug, it will create multiple .shaDa file then cause error
+		-- {
+		-- 	"rmagatti/auto-session",
+		-- 	lazy = false,
+		-- 	tag = "v2.5.1",
+		-- 	opts = {
+		-- 		suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+		-- 	},
+		-- },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
