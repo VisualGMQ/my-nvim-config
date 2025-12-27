@@ -21,6 +21,22 @@ require("lazy").setup({
 		{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000, version = "*" },
 		{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, tag = "v0.10.0" },
 		{ "neovim/nvim-lspconfig", lazy = true, version = "*" },
+
+		-- debugger relate
+		{ "mfussenegger/nvim-dap", lazy = true, version = "*" },
+        {
+            "theHamsta/nvim-dap-virtual-text",
+            lazy = true,
+			dependencies = { "mfussenegger/nvim-dap"},
+        },
+		{
+			"rcarriga/nvim-dap-ui",
+			version = "*",
+            lazy = true,
+			dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "theHamsta/nvim-dap-virtual-text" },
+		},
+
+        -- LSP, DAP install & manager
 		{ "mason-org/mason.nvim", lazy = true, opts = {}, version = "*" },
 		{
 			"mason-org/mason-lspconfig.nvim",
@@ -29,6 +45,15 @@ require("lazy").setup({
 			dependencies = {
 				"mason-org/mason.nvim",
 				"neovim/nvim-lspconfig",
+			},
+		},
+		{
+			"jay-babu/mason-nvim-dap.nvim",
+			lazy = true,
+			version = "*",
+			dependencies = {
+				"mason-org/mason.nvim",
+                 "mfussenegger/nvim-dap",
 			},
 		},
 		{ "p00f/clangd_extensions.nvim", lazy = true },
@@ -70,7 +95,7 @@ require("lazy").setup({
 		{ "nvim-lualine/lualine.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
 
 		-- more pretty diagnostic
-        -- use snacks.nvim to instead
+		-- use snacks.nvim to instead
 		-- {
 		-- 	"folke/trouble.nvim",
 		-- 	lazy = false,
@@ -93,7 +118,7 @@ require("lazy").setup({
 		-- 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		-- },
 
-        -- use Snacks.nvim to replace
+		-- use Snacks.nvim to replace
 		-- {
 		-- 	"nvim-neo-tree/neo-tree.nvim",
 		-- 	version = "*",
@@ -104,14 +129,6 @@ require("lazy").setup({
 		-- 		"nvim-tree/nvim-web-devicons",
 		-- 	},
 		-- },
-
-		-- debugger relate
-		{ "mfussenegger/nvim-dap", lazy = true },
-		{
-			"rcarriga/nvim-dap-ui",
-			version = "*",
-			dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "theHamsta/nvim-dap-virtual-text" },
-		},
 
 		-- pretty buffer line
 		{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons", lazy = false },
@@ -126,7 +143,7 @@ require("lazy").setup({
 		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "*" },
 
 		-- git relate
-        -- use snacks.lua to instead
+		-- use snacks.lua to instead
 		-- { "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
 
 		-- refactory
@@ -141,7 +158,7 @@ require("lazy").setup({
 		},
 
 		-- session
-        -- due to nvim 0.11 bug, it will create multiple .shaDa file then cause error
+		-- due to nvim 0.11 bug, it will create multiple .shaDa file then cause error
 		-- {
 		-- 	"rmagatti/auto-session",
 		-- 	lazy = false,
