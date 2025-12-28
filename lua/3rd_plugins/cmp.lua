@@ -88,6 +88,7 @@ cmp.setup({
 		{ name = "path", ["/"] = "${folder}" },
 	}, {
 		{ name = "buffer" },
+        { name = 'nvim_lsp_signature_help' },
 	}),
 })
 
@@ -128,7 +129,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lsp_list = {
 	"clangd",
 	"rust-analyzer",
-	"neocmakelsp",
+	"neocmake",
     "lemminx",
 }
 
@@ -155,6 +156,9 @@ local params = {
 			"--compile-commands-dir=" .. compile_commands_dir,
 		},
 	},
+    neocmake = {
+        cmd = { "neocmakelsp", "stdio" }
+    }
 }
 
 for _, v in ipairs(lsp_list) do

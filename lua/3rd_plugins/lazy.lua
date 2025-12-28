@@ -64,6 +64,7 @@ require("lazy").setup({
 		{ "hrsh7th/cmp-path", lazy = false, version = "*" },
 		{ "hrsh7th/cmp-cmdline", lazy = false, version = "*" },
 		{ "hrsh7th/nvim-cmp", lazy = false, version = "*" },
+        { "hrsh7th/cmp-nvim-lsp-signature-help", lazy = false, version = "*" },
 
 		-- snip enigne
 		{ "L3MON4D3/LuaSnip", lazy = false, version = "*" },
