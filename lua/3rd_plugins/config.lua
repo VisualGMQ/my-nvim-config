@@ -24,10 +24,10 @@ require("3rd_plugins.lualine")
 require("3rd_plugins.neovide")
 require("3rd_plugins.bufferline")
 require("3rd_plugins.conform")
-require("3rd_plugins.flash")
+-- require("3rd_plugins.flash")
 require("3rd_plugins.auto-pairs")
 require("3rd_plugins.clangd_extension")
--- require("3rd_plugins.gitsigns")
+require("3rd_plugins.gitsigns")
 
 
 -- diagnostic icon in gutter

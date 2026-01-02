@@ -24,3 +24,7 @@ vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.mouse = ""
 vim.opt.shada = ""
+
+vim.opt.foldenable = true
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevelstart = 99

@@ -138,14 +138,14 @@ require("lazy").setup({
 		{ "stevearc/conform.nvim", lazy = true, version = "*" },
 
 		-- quick move & search
-		{ "folke/flash.nvim", event = "VeryLazy", lazy = false, version = "*" },
+        -- It seems I don't need it :)
+		-- { "folke/flash.nvim", event = "VeryLazy", lazy = false, version = "*" },
 
 		-- auto-pairs
 		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "*" },
 
 		-- git relate
-		-- use snacks.lua to instead
-		-- { "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
+		{ "lewis6991/gitsigns.nvim", lazy = false, version = "*" },
 
 		-- refactory
 		{

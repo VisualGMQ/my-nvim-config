@@ -15,6 +15,24 @@ snacks.setup
     statuscolumn = { enabled = true },
     words = { enabled = true },
     projects = {enabled = false},
+    picker = {
+        formatters = {
+            file = {
+                filename_first = true,
+            }
+        }
+    }
+}
+
+local stick_opt =
+{
+    auto_close = false,
+    jump = {
+        close = false,
+    },
+    layout = {
+        preset = "bottom"
+    }
 }
 
 -- Top Pickers & Explorer
@@ -23,7 +41,7 @@ vim.keymap.set("n", "<leader>ff", snacks.picker.smart, { desc = "Smart Find File
 -- { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
 vim.keymap.set("n", "<leader>e", function() snacks.explorer() end, {desc = "File Explorer" })
 -- find
--- vim.keymap.set("n", "<leader>fb", function() snacks.picker.buffers() end, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>sb", function() snacks.picker.buffers() end, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fc", function() snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Find Config File" })
 -- { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
 -- { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
@@ -45,17 +63,21 @@ vim.keymap.set("n", "<leader>gd", function() snacks.picker.git_diff() end, { des
 -- { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
 -- Grep
 -- { "<leader>sB", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
-vim.keymap.set("n", "<leader>sg", function() snacks.picker.grep() end, { desc = "Grep" })
+vim.keymap.set("n", "<leader>Sg", function() snacks.picker.grep(stick_opt) end , { desc = "Grep" })
+vim.keymap.set("n", "<leader>sg", function() snacks.picker.grep() end , { desc = "Grep" })
+
 -- { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
 -- search
 -- { '<leader>s"', function() Snacks.picker.registers() end, desc = "Registers" },
 -- { '<leader>s/', function() Snacks.picker.search_history() end, desc = "Search History" },
 -- { "<leader>sa", function() Snacks.picker.autocmds() end, desc = "Autocmds" },
-vim.keymap.set("n", "<leader>sb", function() snacks.picker.lines() end, { desc = "Buffer Lines" })
+vim.keymap.set("n", "<leader>sl", function() snacks.picker.lines() end, { desc = "Buffer Lines" })
 -- { "<leader>sc", function() Snacks.picker.command_history() end, desc = "Command History" },
 -- { "<leader>sC", function() Snacks.picker.commands() end, desc = "Commands" },
 vim.keymap.set("n", "<leader>sD", function() snacks.picker.diagnostics() end, { desc = "Diagnostics" })
 vim.keymap.set("n", "<leader>sd", function() snacks.picker.diagnostics_buffer() end, { desc = "Buffer Diagnostics" })
+vim.keymap.set("n", "<leader>SD", function() snacks.picker.diagnostics(stick_opt) end, { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>Sd", function() snacks.picker.diagnostics_buffer(stick_opt) end, { desc = "Buffer Diagnostics" })
 -- { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
 -- { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 -- { "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
@@ -77,8 +99,12 @@ vim.keymap.set("n", "<leader>gi", function() snacks.picker.lsp_implementations()
 -- vim.keymap.set("n", "<leader>gy", function() snacks.picker.lsp_type_definitions() end, { desc = "Goto T[y]pe Definition" })
 vim.keymap.set("n", "<leader>fic", function() snacks.picker.lsp_incoming_calls() end, { desc = "C[a]lls Incoming" })
 vim.keymap.set("n", "<leader>foc", function() snacks.picker.lsp_outgoing_calls() end, { desc = "C[a]lls Outgoing" })
+vim.keymap.set("n", "<leader>Fic", function() snacks.picker.lsp_incoming_calls(stick_opt) end, { desc = "C[a]lls Incoming" })
+vim.keymap.set("n", "<leader>Foc", function() snacks.picker.lsp_outgoing_calls(stick_opt) end, { desc = "C[a]lls Outgoing" })
 vim.keymap.set("n", "<leader>fs", function() snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
+vim.keymap.set("n", "<leader>Fs", function() snacks.picker.lsp_symbols(stick_opt) end, { desc = "LSP Symbols" })
 vim.keymap.set("n", "<leader>fS", function() snacks.picker.lsp_workspace_symbols() end, {desc = "LSP Workspace Symbols" })
+vim.keymap.set("n", "<leader>FS", function() snacks.picker.lsp_workspace_symbols(stick_opt) end, {desc = "LSP Workspace Symbols" })
 -- Other
 -- { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
 -- { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
