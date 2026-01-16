@@ -21,6 +21,7 @@ require("lazy").setup({
 		{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000, version = "*" },
 		{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, tag = "v0.10.0" },
 		{ "neovim/nvim-lspconfig", lazy = true, version = "*" },
+        { "nvim-treesitter/nvim-treesitter-context", lazy = false,  version = "*" },
 
 		-- debugger relate
 		{ "mfussenegger/nvim-dap", lazy = true, version = "*" },
@@ -73,73 +74,16 @@ require("lazy").setup({
 		{ "nvim-lua/plenary.nvim", lazy = true },
 		{ "MunifTanjim/nui.nvim", lazy = true, version = "*" },
 
-		-- fuzzy finding
-		-- use native fzf to speedup finding
-		-- {
-		-- 	"nvim-telescope/telescope-fzf-native.nvim",
-		-- 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
-		-- 	lazy = true,
-		-- },
-		-- -- fuzzy finding engine
-		-- {
-		-- 	"nvim-telescope/telescope.nvim",
-		-- 	version = "*",
-		-- 	lazy = true,
-		-- 	dependencies = {
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"BurntSushi/ripgrep",
-		-- 	},
-		-- },
 		{ "folke/snacks.nvim", version = "*", priority = 1000, lazy = false },
 
 		-- status bar
 		{ "nvim-lualine/lualine.nvim", lazy = false, dependencies = { "nvim-tree/nvim-web-devicons" } },
-
-		-- more pretty diagnostic
-		-- use snacks.nvim to instead
-		-- {
-		-- 	"folke/trouble.nvim",
-		-- 	lazy = false,
-		-- 	opts = {},
-		-- 	cmd = "Trouble",
-		-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
-		-- 	version = "*",
-		-- },
-
-		-- background task manager
-		-- NOTE: can't use it under Windows(OverseerRun will abort due to path find not correct)
-		-- { 'stevearc/overseer.nvim', version = "v2.*", lazy = true },
-
-		-- file explorer
-		-- NOTE: I think this is no use..., I want to use Neotree when open empty nvim
-		-- {
-		-- 	"stevearc/oil.nvim",
-		-- 	lazy = false,
-		-- 	version = "*",
-		-- 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
-		-- },
-
-		-- use Snacks.nvim to replace
-		-- {
-		-- 	"nvim-neo-tree/neo-tree.nvim",
-		-- 	version = "*",
-		-- 	lazy = false,
-		-- 	dependencies = {
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"MunifTanjim/nui.nvim",
-		-- 		"nvim-tree/nvim-web-devicons",
-		-- 	},
-		-- },
 
 		-- pretty buffer line
 		{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons", lazy = false },
 
 		-- formatter
 		{ "stevearc/conform.nvim", lazy = true, version = "*" },
-
-		-- quick move & search
-        -- It seems I don't need it :)
-		-- { "folke/flash.nvim", event = "VeryLazy", lazy = false, version = "*" },
 
 		-- auto-pairs
 		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true, lazy = false, version = "*" },
@@ -158,16 +102,8 @@ require("lazy").setup({
 			opts = {},
 		},
 
-		-- session
-		-- due to nvim 0.11 bug, it will create multiple .shaDa file then cause error
-		-- {
-		-- 	"rmagatti/auto-session",
-		-- 	lazy = false,
-		-- 	tag = "v2.5.1",
-		-- 	opts = {
-		-- 		suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-		-- 	},
-		-- },
+        -- task scheduler
+        { "stevearc/overseer.nvim", lazy = false, version = "*" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
