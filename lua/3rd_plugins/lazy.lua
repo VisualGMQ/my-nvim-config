@@ -103,7 +103,7 @@ require("lazy").setup({
 		},
 
         -- task scheduler
-        { "stevearc/overseer.nvim", lazy = false, version = "*" },
+        -- { "stevearc/overseer.nvim", lazy = false, version = "*" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
