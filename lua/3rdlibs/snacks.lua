@@ -76,8 +76,16 @@ vim.keymap.set("n", "gi", function() snacks.picker.lsp_implementations() end, { 
 vim.keymap.set("n", "gy", function() snacks.picker.lsp_type_definitions() end, { desc = "Goto T[y]pe Definition" })
 vim.keymap.set("n", "gci", function() snacks.picker.lsp_incoming_calls() end, { desc = "C[a]lls Incoming" })
 vim.keymap.set("n", "gco", function() snacks.picker.lsp_outgoing_calls() end, { desc = "C[a]lls Outgoing" })
+vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, { desc = "Rename" })
 vim.keymap.set("n", "<leader>ss", function() snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
 vim.keymap.set("n", "<leader>sS", function() snacks.picker.lsp_symbols() end, { desc = "LSP Symbols" })
+-- remove some default mapping
+vim.keymap.del('n', "grn")
+vim.keymap.del('n', "grx")
+vim.keymap.del('n', "grr")
+vim.keymap.del({'n', 'x'}, "gra")
+vim.keymap.del('n', "gri")
+vim.keymap.del('n', "grt")
 -- Other
 -- { "<leader>z",  function() snacks.zen() end, desc = "Toggle Zen Mode" },
 -- { "<leader>Z",  function() snacks.zen.zoom() end, desc = "Toggle Zoom" },
